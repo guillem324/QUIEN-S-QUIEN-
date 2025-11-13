@@ -10,11 +10,11 @@ Hem escollit diferents tipografies depenent de l’ús, volem donar un estil “
 
 títol : KOMINGO
 
-![Captura 1](src/images%20.md/captura6.PNG)
+![Captura 1](src/images.md/captura6.PNG)
 
 resta d'elements: COMIC SANS
 
-![Captura 2](src/images%20.md/captura7.PNG)
+![Captura 2](src/images.md/captura7.PNG)
 
 Els botons poden anar variant depenent dels usos que li vulguem donar, hi ha una web que et dona el codi de diferents estils de botons: https://cssbuttons\.io/
 
@@ -22,21 +22,21 @@ __ 2\.  Paleta de colors:__
 
 L’estètica principal de la web seran colors molt vius i simples, que recorden a un disseny infantil i nostalgic dels jocs web “cutres” de la deca dels 2000s, em pensat en utilitzar molt el blau i vermell ja que son colors que contrasten molt, sobretot per l’apartat de les preguntes utilitzarem aquests dos colors pero per colors de fons tenim pensat utilitzar algun groc o taronja, la idea de la paleta de colors principal seria aquesta, encara que en un futur és probable que se n'hi afegeixin mes 
 
-![Captura 3](src/images%20.md/captura8.PNG)
+![Captura 3](src/images.md/captura8.PNG)
 
 # <a id="_c5gnutv5fqpm"></a>__TASCA 2 Dissenya el wireframe del teu videojoc__
 
 Página Principal:
 
-![Captura 3](src/images%20.md/captura1.PNG)
+![Captura 3](src/images.md/captura1.PNG)
 
 Página Gameplay:
 
-![Captura 4](src/images%20.md/captura2.PNG)
+![Captura 4](src/images.md/captura2.PNG)
 
 Página EndGame:
 
-![Captura 5](src/images%20.md/captura3.PNG)
+![Captura 5](src/images.md/captura3.PNG)
 
 # <a id="_c5gnutv5fqpm"></a>__TASCA 3 Defineix els recursos gràfics del joc__
 
@@ -46,10 +46,10 @@ Sobre els recursos gràfics del joc, utilitzarem principalment fotografies  real
 
 https://www\.iloveimg\.com
 
-![Captura 6](src/images%20.md/captura9.PNG)
+![Captura 6](src/images.md/captura9.PNG)
 
 # <a id="_7eijol8ys514"></a>__TASCA 4 Dissenya el diagrama de flux del videojoc\.__
 
-![Captura 7](src/images%20.md/captura4.PNG)
+![Captura 7](src/images.md/captura4.PNG)
 
-![Captura 8](src/images%20.md/captura5.PNG)
+![Captura 8](src/images.md/captura5.PNG)

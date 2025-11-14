@@ -122,11 +122,107 @@ body {
 .questions-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
-  width: 180vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 2px solid blue;
+  padding: 30px;
   margin: 50px;
-  padding: 50px;
-  border: 1px solid red;
+  width: auto;
+  min-width: 180vh;
+  height: auto;
+  min-height: 60vh;
+}
+
+.questions-title {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.question-group {
+  margin-bottom: 25px;
+}
+
+.question-label {
+  font-size: 1.2em;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.question-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.question-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.question-btn:active {
+  transform: scale(0.95);
+}
+
+.btn-yes {
+  background-color: #0066ff;
+  color: #fff;
+}
+
+.btn-no {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.btn-brown {
+  background-color: #8b4513;
+  color: #fff;
+}
+
+.btn-black {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-yellow {
+  background-color: #ffd700;
+  color: #000000;
+}
+
+.btn-orange {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.btn-cyan {
+  background-color: #00cccc;
+  color: #fff;
+}
+
+.btn-magenta {
+  background-color: #ff00ff;
+  color: #fff;
+}
+
+.btn-profession {
+  background-color: #0066ff;
+  color: #ffffff;
+}
+
+.btn-blue {
+  background-color: #0066ff;
+  color: #fff;
 }

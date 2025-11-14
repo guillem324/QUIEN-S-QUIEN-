@@ -111,12 +111,35 @@ body {
 .game-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   height: 60vh;
   width: 180vh;
   padding: 50px;
   border: 1px solid blue;
+}
+.characters-grid,
+.ia-grid {
+  flex: 1 1 0;            
+  min-width: 0;           
+  height: 100%;           
+  box-sizing: border-box;
+  padding: 0.5rem;
+  overflow: auto;
+  border: 1px solid rgb(255, 0, 0); 
+  margin: 20px;
+}
+/* responsive per als contenidors de jugadors */
+@media (max-width: 800px) {
+  .game-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .characters-grid,
+  .ia-grid {
+    width: 100%;
+    height: 40vh;
+  }
 }
 
 .questions-container {

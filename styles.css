@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'KOMIGO';
-  src: url('src/fonts/Komigo/Komigo3D-Regular.ttf') format('truetype');
+  src: url('assets/fonts/Komigo/Komigo3D-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -106,3 +106,4 @@ body {
   color: #333;
   margin-top: 0;
 }
+

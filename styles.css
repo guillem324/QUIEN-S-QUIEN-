@@ -7,7 +7,14 @@
 
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 25%, #fff176 50%, #ffed4e 75%, #ffd700 100%);
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #ffed4e 25%,
+    #fff176 50%,
+    #ffed4e 75%,
+    #ffd700 100%
+  );
   background-attachment: fixed;
   display: flex;
   justify-content: flex-start;
@@ -67,27 +74,38 @@ body {
 .title {
   font-family: "GRINCHED", sans-serif;
   font-size: 9em;
-  color: #3d3d3d;
+  color: #ff0000;
   margin-bottom: 30px;
   margin-top: 200px;
+  -webkit-text-stroke: 0.05px #fff;
+  text-shadow: -0px -0px #fff, 5px -5px 0 #1900ff, 0 0 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }
 
-.start-button {
-  background-color: #0f1d5a;
-  color: white;
-  padding: 20px 45px;
-  font-size: 1.2em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  border: none;
-  border-radius: 5px;
+.start-button,
+.question-btn {
+  background: #fbca1f;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 20px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 100px;
+  color: #000;
 }
 
-.start-button:hover {
-  background-color: #ee6a12;
+.start-button,
+.question-btn:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.start-button,
+.question-btn:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 768px) {
@@ -99,7 +117,7 @@ body {
 
   .start-button {
     padding: 15px 30px;
-    font-size: 1em;
+    font-size: 20px;
     margin-top: 50px;
   }
 }
@@ -107,13 +125,16 @@ body {
 /* GAMEPLAY */
 .gameplay-title {
   font-family: "GRINCHED", sans-serif;
-  font-size: 4em;
-  color: #3d3d3d;
-  margin-top: 0;
+  font-size: 5em;
+  color: #ff0000;
+  margin: 50px 0 50px 0;
   text-align: center;
-  padding: 10px;
   position: relative;
   z-index: 1;
+  -webkit-text-stroke: 0.5px #fff;
+  text-shadow: -3px -3px 0 #fff, 5px -5px 0 #1900ff, 0 0 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -130,7 +151,7 @@ body {
   gap: 20px;
   width: 100%;
   max-width: 1400px;
-  padding: 20px;
+  padding: 0 20px 0 20px;
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
@@ -160,13 +181,17 @@ body {
 }
 
 .characters-grid::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
   pointer-events: none;
   border-radius: 12px;
 }
@@ -178,13 +203,17 @@ body {
 }
 
 .ia-grid::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
   pointer-events: none;
   border-radius: 12px;
 }
@@ -218,10 +247,13 @@ body {
   height: auto;
   position: relative;
   z-index: 1;
-  background: radial-gradient(circle at center, #ffd700 0%, #ffed4e 50% #ff9800 100%);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 
-              0 0 20px rgba(255, 215, 0, 0.3),
-              inset 0 0 20px rgba(255, 255, 255, 0.1);
+  background: radial-gradient(
+    circle at center,
+    #ffd700 0%,
+    #ffed4e 50% #ff9800 100%
+  );
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 215, 0, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 4px solid transparent;
   background-clip: padding-box;
@@ -231,6 +263,17 @@ body {
   .questions-container {
     padding: 15px;
     margin: 10px;
+  }
+
+  .question-btn {
+    padding: 0.4em 0.8em;
+    font-size: 14px;
+    border: 2px solid black;
+  }
+
+  .guess-button {
+    font-size: 18px;
+    padding: 0.6em 1.5em;
   }
 }
 
@@ -245,6 +288,39 @@ body {
   margin-bottom: 25px;
 }
 
+.guess-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.guess-button {
+  background: #fbca1f;
+  padding: 0.8em 2em;
+  margin: 20px;
+  margin-bottom: 50px;
+  font-weight: 900;
+  font-size: 24px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.guess-button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.guess-button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
 .question-label {
   font-size: 1.2em;
   color: #000;
@@ -256,50 +332,4 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-.question-btn {
-  padding: 12px 24px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, #0066ff 0%, #00aeff 50%, #0066ff 100%);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4),
-              0 0 10px rgba(0, 204, 255, 0.2),
-              inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.question-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
-}
-
-.question-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.5),
-              0 0 15px rgba(0, 204, 255, 0.3),
-              inset 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-
-.question-btn:hover::before {
-  left: 100%;
-}
-
-.question-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(0, 102, 255, 0.3),
-              inset 0 2px 5px rgba(0, 0, 0, 0.2);
 }

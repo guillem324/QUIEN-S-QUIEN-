@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "KOMIGO";
-  src: url("assets/fonts/Komigo/Komigo3D-Regular.ttf") format("truetype");
+  font-family: "GRINCHED";
+  src: url("assets/fonts/grinched/GrinchedRegular.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -65,9 +65,9 @@ body {
 }
 
 .title {
-  font-family: "KOMIGO", sans-serif;
+  font-family: "GRINCHED", sans-serif;
   font-size: 9em;
-  color: #333;
+  color: #3d3d3d;
   margin-bottom: 30px;
   margin-top: 200px;
 }
@@ -106,9 +106,9 @@ body {
 
 /* GAMEPLAY */
 .gameplay-title {
-  font-family: "KOMIGO", sans-serif;
-  font-size: 3em;
-  color: #000;
+  font-family: "GRINCHED", sans-serif;
+  font-size: 4em;
+  color: #3d3d3d;
   margin-top: 0;
   text-align: center;
   padding: 10px;

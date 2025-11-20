@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'KOMIGO';
-  src: url('assets/fonts/Komigo/Komigo3D-Regular.ttf') format('truetype');
+  font-family: "KOMIGO";
+  src: url("assets/fonts/Komigo/Komigo3D-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -61,7 +61,7 @@ body {
 }
 
 .title {
-  font-family: 'KOMIGO', sans-serif;
+  font-family: "KOMIGO", sans-serif;
   font-size: 9em;
   color: #333;
   margin-bottom: 30px;
@@ -102,7 +102,7 @@ body {
 
 /* GAMEPLAY */
 .gameplay-title {
-  font-family: 'KOMIGO', sans-serif;
+  font-family: "KOMIGO", sans-serif;
   font-size: 3em;
   color: #333;
   margin-top: 0;
@@ -118,17 +118,19 @@ body {
   padding: 50px;
   border: 1px solid blue;
 }
+
 .characters-grid,
 .ia-grid {
-  flex: 1 1 0;            
-  min-width: 0;           
-  height: 100%;           
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
   box-sizing: border-box;
   padding: 0.5rem;
   overflow: auto;
-  border: 1px solid rgb(255, 0, 0); 
+  border: 1px solid rgb(255, 0, 0);
   margin: 20px;
 }
+
 /* responsive per als contenidors de jugadors */
 @media (max-width: 800px) {
   .game-container {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,20 +10,24 @@
     <div class="background-questions"></div>
     <a href="index.html" class="gameplay-title">Qui es qui?</a>
     <div class="game-container">
-      <div class="characters-grid" id="charactersGrid">
-
-      </div>
-      <div class="ia-grid" id="iaGrid">
-
-      </div>
+      <div class="characters-grid" id="charactersGrid"></div>
+      <div class="ia-grid" id="iaGrid"></div>
     </div>
     <div class="questions-container">
       <h2 class="questions-title">Preguntes:</h2>
-      
+
+      <div class="question-group">
+        <h3 class="question-label">Gènere?</h3>
+        <div class="button-group">
+          <button class="question-btn btn-cyan">Home</button>
+          <button class="question-btn btn-magenta">Dona</button>
+        </div>
+      </div>
+
       <div class="question-group">
         <h3 class="question-label">Té pel?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">SI</button>
+          <button class="question-btn btn-yes">Sí</button>
           <button class="question-btn btn-no">No</button>
         </div>
       </div>
@@ -31,17 +35,18 @@
       <div class="question-group">
         <h3 class="question-label">Color de pel?</h3>
         <div class="button-group">
-          <button class="question-btn btn-brown">Castaño</button>
-          <button class="question-btn btn-black">Negro</button>
-          <button class="question-btn btn-yellow">Rubio</button>
-          <button class="question-btn btn-orange">Pelirrojo</button>
+          <button class="question-btn btn-brown">Castany</button>
+          <button class="question-btn btn-black">Negre</button>
+          <button class="question-btn btn-yellow">Ros</button>
+          <button class="question-btn btn-orange">Pèl-roig</button>
+          <button class="question-btn btn-gray">Gris</button>
         </div>
       </div>
 
       <div class="question-group">
-        <h3 class="question-label">Té bigoti?</h3>
+        <h3 class="question-label">Té pèl llarg?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">SI</button>
+          <button class="question-btn btn-yes">Sí</button>
           <button class="question-btn btn-no">No</button>
         </div>
       </div>
@@ -49,23 +54,15 @@
       <div class="question-group">
         <h3 class="question-label">Té ulleres?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">SI</button>
+          <button class="question-btn btn-yes">Sí</button>
           <button class="question-btn btn-no">No</button>
         </div>
       </div>
 
       <div class="question-group">
-        <h3 class="question-label">Génere?</h3>
+        <h3 class="question-label">Professió?</h3>
         <div class="button-group">
-          <button class="question-btn btn-cyan">Hombre</button>
-          <button class="question-btn btn-magenta">Mujer</button>
-        </div>
-      </div>
-
-      <div class="question-group">
-        <h3 class="question-label">Profesió?</h3>
-        <div class="button-group">
-          <button class="question-btn btn-profession">Politio</button>
+          <button class="question-btn btn-profession">Polític</button>
           <button class="question-btn btn-profession">Cantant</button>
           <button class="question-btn btn-profession">Actor</button>
           <button class="question-btn btn-profession">Influencer</button>
@@ -73,21 +70,61 @@
       </div>
 
       <div class="question-group">
-        <h3 class="question-label">País?</h3>
+        <h3 class="question-label">És esportista?</h3>
         <div class="button-group">
-          <button class="question-btn btn-blue">Espanya</button>
-          <button class="question-btn btn-blue">EE.UU</button>
-          <button class="question-btn btn-blue">Israel</button>
-          <button class="question-btn btn-blue">Russia</button>
+          <button class="question-btn btn-yes">Sí</button>
+          <button class="question-btn btn-no">No</button>
         </div>
       </div>
 
+      <div class="question-group">
+        <h3 class="question-label">És presentador?</h3>
+        <div class="button-group">
+          <button class="question-btn btn-yes">Sí</button>
+          <button class="question-btn btn-no">No</button>
+        </div>
+      </div>
+
+      <div class="question-group">
+        <h3 class="question-label">Orientació política?</h3>
+        <div class="button-group">
+          <button class="question-btn btn-red">Esquerra</button>
+          <button class="question-btn btn-blue">Dreta</button>
+          <button class="question-btn btn-gray">Apolític</button>
+        </div>
+      </div>
+
+      <div class="question-group">
+        <h3 class="question-label">País?</h3>
+        <div class="button-group">
+          <button class="question-btn btn-blue">Espanya</button>
+          <button class="question-btn btn-blue">EE.UU.</button>
+          <button class="question-btn btn-blue">Israel</button>
+          <button class="question-btn btn-blue">Rússia</button>
+        </div>
+      </div>
+
+      <div class="question-group">
+        <h3 class="question-label">Ha estat president?</h3>
+        <div class="button-group">
+          <button class="question-btn btn-yes">Sí</button>
+          <button class="question-btn btn-no">No</button>
+        </div>
+      </div>
+
+      <div class="question-group">
+        <h3 class="question-label">És milionari?</h3>
+        <div class="button-group">
+          <button class="question-btn btn-yes">Sí</button>
+          <button class="question-btn btn-no">No</button>
+        </div>
+      </div>
     </div>
 
     <div class="guess-button-container">
       <button class="guess-button">Endevinar</button>
     </div>
-    
+
     <script src="background.js"></script>
     <script src="gameplay.js"></script>
   </body>

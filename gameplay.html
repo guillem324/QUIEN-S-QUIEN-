@@ -7,15 +7,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic">
       <source src="assets/sounds/background.mp3" type="audio/mpeg">
     </audio>
     <div class="background-questions"></div>
     <a href="index.html" class="gameplay-title">Qui es qui?</a>
     <div class="game-container">
-      <div class="characters-grid" id="charactersGrid"></div>
-      <div class="ia-grid" id="iaGrid"></div>
+      <div class="grid-wrapper">
+        <div class="character-counter" id="playerCounter">Queden: 25</div>
+        <div class="characters-grid" id="charactersGrid"></div>
+      </div>
+      <div class="grid-wrapper">
+        <div class="character-counter" id="iaCounter">Queden: 25</div>
+        <div class="ia-grid" id="iaGrid"></div>
+      </div>
     </div>
+    
+    <div class="turn-indicator" id="turnIndicator">Torn del: Jugador</div>
+    
+    <div class="comments-section" id="commentsSection">
+      <h2 class="comments-title">Comentaris del joc:</h2>
+      <div class="comments-container" id="commentsContainer"></div>
+    </div>
+    
     <div class="questions-container">
       <h2 class="questions-title">Preguntes:</h2>
 
@@ -30,8 +44,7 @@
       <div class="question-group">
         <h3 class="question-label">Té pel?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">Té pel?</button>
         </div>
       </div>
 
@@ -49,16 +62,14 @@
       <div class="question-group">
         <h3 class="question-label">Té pèl llarg?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">Té pèl llarg?</button>
         </div>
       </div>
 
       <div class="question-group">
         <h3 class="question-label">Té ulleres?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">Té ulleres?</button>
         </div>
       </div>
 
@@ -75,16 +86,14 @@
       <div class="question-group">
         <h3 class="question-label">És esportista?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">És esportista?</button>
         </div>
       </div>
 
       <div class="question-group">
         <h3 class="question-label">És presentador?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">És presentador?</button>
         </div>
       </div>
 
@@ -110,22 +119,58 @@
       <div class="question-group">
         <h3 class="question-label">Ha estat president?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">Ha estat president?</button>
         </div>
       </div>
 
       <div class="question-group">
         <h3 class="question-label">És milionari?</h3>
         <div class="button-group">
-          <button class="question-btn btn-yes">Sí</button>
-          <button class="question-btn btn-no">No</button>
+          <button class="question-btn btn-yes">És milionari?</button>
         </div>
       </div>
     </div>
 
     <div class="guess-button-container">
       <button class="guess-button">Endevinar</button>
+    </div>
+
+    <!-- Modal inicial per seleccionar personatge secret del jugador -->
+    <div class="modal" id="selectSecretModal">
+      <div class="modal-content">
+        <h2>Selecciona el teu personatge secret:</h2>
+        <p style="text-align: center; margin-bottom: 20px;">Tria el personatge que la IA haurà d'endevinar</p>
+        <div class="modal-characters-grid" id="selectSecretGrid"></div>
+      </div>
+    </div>
+
+    <!-- Modal per seleccionar personatge a endevinar -->
+    <div class="modal" id="guessModal">
+      <div class="modal-content">
+        <h2>Selecciona el personatge:</h2>
+        <div class="modal-characters-grid" id="modalCharactersGrid"></div>
+        <button class="modal-close">Cancel·lar</button>
+      </div>
+    </div>
+
+    <!-- Modal final per mostrar personatges secrets -->
+    <div class="modal" id="endGameModal">
+      <div class="modal-content">
+        <h2 id="endGameTitle"></h2>
+        <div class="secret-characters">
+          <div class="secret-character">
+            <h3>Personatge secret del Jugador:</h3>
+            <img id="playerSecretImg" src="" alt="">
+            <p id="playerSecretName"></p>
+          </div>
+          <div class="secret-character">
+            <h3>Personatge secret de la IA:</h3>
+            <img id="iaSecretImg" src="" alt="">
+            <p id="iaSecretName"></p>
+          </div>
+        </div>
+        <button class="modal-close">Tancar</button>
+      </div>
     </div>
 
     <script src="background.js"></script>

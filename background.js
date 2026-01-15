@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
   const backgroundContainer = document.querySelector('.background-questions');
   if (!backgroundContainer) return;
   

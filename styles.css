@@ -163,10 +163,18 @@ body {
   z-index: 1;
 }
 
-.characters-grid,
-.ia-grid {
+.grid-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   flex: 1 1 0;
   min-width: 0;
+  aspect-ratio: 1;
+}
+
+.characters-grid,
+.ia-grid {
+  width: 100%;
   aspect-ratio: 1;
   box-sizing: border-box;
   padding: 0.5rem;
@@ -177,12 +185,11 @@ body {
   gap: 4px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  min-height: 300px;
 }
 
 .characters-grid {
   border: 3px solid #00ccff;
-  background: linear-gradient(135deg, #00ccff 0%, #0066ff 50%, #0044cc 100%);
+  background: #00ccff;
   position: relative;
 }
 
@@ -233,17 +240,19 @@ body {
     max-width: 100%;
     width: calc(100% - 20px);
   }
+  .grid-wrapper {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+  }
   .characters-grid,
   .ia-grid {
-    width: calc(100vw - 40px);
-    max-width: calc(100vw - 40px);
-    height: calc(100vw - 40px);
+    width: 100%;
     aspect-ratio: 1;
     min-width: 0;
-    min-height: 0;
     padding: 0.25rem;
     gap: 2px;
-    flex: 0 0 auto;
   }
 
   .character-card {
@@ -265,11 +274,16 @@ body {
 }
 
 @media (max-width: 480px) {
+  .grid-wrapper {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+  }
   .characters-grid,
   .ia-grid {
-    width: calc(100vw - 20px);
-    max-width: calc(100vw - 20px);
-    height: calc(100vw - 20px);
+    width: 100%;
+    aspect-ratio: 1;
     padding: 0.2rem;
     gap: 1px;
   }
@@ -434,6 +448,9 @@ body {
 
 .card-front {
   background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .card-back {
@@ -445,7 +462,7 @@ body {
 
 /* Estil del revers per cartes del jugador (blau) */
 .characters-grid .card-back {
-  background: linear-gradient(135deg, #00ccff 0%, #0066ff 50%, #0044cc 100%);
+  background: #00ccff;
 }
 
 /* Estil del revers per cartes de la IA (vermell) */
@@ -462,8 +479,10 @@ body {
   width: 100%;
   flex: 1;
   min-height: 20px;
+  height: auto;
   object-fit: cover;
   position: relative;
+  display: block;
 }
 
 .card-front::before {
@@ -518,5 +537,357 @@ body {
 
   .card-front .character-image::after {
     height: 25px;
+  }
+}
+
+/* Secció de comentaris */
+.comments-section {
+  width: 100%;
+  max-width: 1500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: radial-gradient(
+    circle at center,
+    #ffd700 0%,
+    #ffed4e 50%,
+    #ff9800 100%
+  );
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 4px solid transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.comments-title {
+  font-size: 1.8em;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.comments-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 2px solid #000;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 4px solid #000;
+}
+
+.comment-speaker {
+  color: #0066ff;
+  font-weight: bold;
+}
+
+.comment-victory {
+  border-left-color: #00ff00;
+  background: rgba(0, 255, 0, 0.2);
+}
+
+.comment-defeat {
+  border-left-color: #ff0000;
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.comment-question {
+  border-left-color: #0066ff;
+}
+
+/* Contadors de personatges */
+.character-counter {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1em;
+  border: 2px solid #000;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+.character-counter.low-count {
+  background: rgba(255, 200, 0, 0.9);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Indicador de torn */
+.turn-indicator {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  border: 3px solid #000;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: relative;
+}
+
+.turn-indicator.turn-player {
+  background: rgba(0, 204, 255, 0.9);
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.turn-indicator.turn-ia {
+  background: rgba(255, 51, 0, 0.9);
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Cartes eliminades */
+.character-card.eliminated {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.character-card.eliminated.flipped .card-inner {
+  transform: rotateX(-180deg);
+}
+
+.character-card.eliminated .card-front {
+  pointer-events: none;
+}
+
+/* Modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ff9800 100%);
+  margin: 5% auto;
+  padding: 30px;
+  border: 4px solid #000;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.3s;
+  position: relative;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #000;
+}
+
+.modal-characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+  gap: 10px;
+  margin: 20px 0;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.modal-characters-grid .character-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  min-height: 120px;
+}
+
+.modal-characters-grid .character-card .card-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-characters-grid .character-card .card-front,
+.modal-characters-grid .character-card .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-characters-grid .character-card:hover {
+  /* Eliminat l'efecte hover que descuadrava les cards */
+  cursor: pointer;
+}
+
+.modal-close {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  background: #fbca1f;
+  border: 3px solid #000;
+  border-radius: 0.4em;
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+  color: #000;
+}
+
+.modal-close:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.modal-close:active {
+  transform: translate(0.05em, 0.05em);
+}
+
+/* Personatges secrets */
+.secret-characters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.secret-character {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px solid #000;
+  min-width: 200px;
+}
+
+.secret-character h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #000;
+}
+
+.secret-character img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+.secret-character p {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Botons deshabilitats */
+.question-btn.disabled,
+.guess-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.question-btn.disabled:hover,
+.guess-button.disabled:hover {
+  transform: none;
+  box-shadow: 0.1em 0.1em;
+}
+
+/* Responsive per comentaris */
+@media (max-width: 768px) {
+  .comments-section {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .comments-container {
+    max-height: 150px;
+  }
+  
+  .turn-indicator {
+    font-size: 1.2em;
+    padding: 8px 15px;
+  }
+  
+  .character-counter {
+    font-size: 0.9em;
+    padding: 5px 10px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    margin: 10% auto;
+  }
+  
+  .modal-characters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 80px));
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .modal-characters-grid .character-card {
+    min-height: 80px;
+    aspect-ratio: 1;
+  }
+  
+  .secret-characters {
+    flex-direction: column;
+    align-items: center;
   }
 }
